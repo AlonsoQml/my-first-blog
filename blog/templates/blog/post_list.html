@@ -10,7 +10,10 @@
 <style type="text/css">
 	h1 {
 		text-align : center;
-		color: #666666;
+		color: #444444;
+	}
+	img {
+
 	}
 
 	.moth{
@@ -21,31 +24,29 @@
 	#tel {
 		width: 170px;
 	}
+	.call {
+		border: 1px solid #444444;
+		width: 200px;
+		position: ;
+	}
+	#cont {
+		width: 500px;
+	}
 
 </style>
 </head>
 <body>
+<div>
+        <h1><a href="/">My First Blog</a></h1>
+    </div>
 
-<h1>Lets start</h1>
-
-
-<div class='moth'>
-Hello, motherfucker!
-</div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="moth">
-Call us
-<br>
-	<img src="https://images-na.ssl-images-amazon.com/images/I/71JIHReJ9hL._SY355_.jpg" name='contact_tel' id='tel'>
-
-</div>
+{% for post in posts %}
+        <div id="cont">
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
 
 
 
